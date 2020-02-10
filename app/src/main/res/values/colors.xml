@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="ui_color_red">#F0453A</color>
+    <color name="ui_color_white">#FFFFFF</color>
+
+    <color name="ui_color_text_primary">#172a3f</color>
+    <color name="ui_color_background">#f3f4f5</color>
+    <color name="ui_color_background_loading">#66220A08</color>
+    <color name="ui_color_toolbar_background">#ffffff</color>
 </resources>

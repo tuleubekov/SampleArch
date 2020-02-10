@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BaseToolbar">
+        <attr name="toolbarTitle" format="string" />
+        <attr name="toolbarTitleColor" format="color" />
+        <attr name="toolbarBackground" format="color" />
+        <attr name="toolbarNavIcon" format="reference" />
+    </declare-styleable>
+</resources>
