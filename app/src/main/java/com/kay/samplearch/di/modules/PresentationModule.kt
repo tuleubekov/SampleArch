@@ -1,4 +1,4 @@
-package com.kay.samplearch.di
+package com.kay.samplearch.di.modules
 
 import android.content.Context
 import dagger.Module

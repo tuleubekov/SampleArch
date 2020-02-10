@@ -1,4 +1,4 @@
-package com.kay.samplearch.di
+package com.kay.samplearch.di.modules
 
 import com.kay.samplearch.common.ThreadExecutors
 import com.kay.samplearch.common.toAppExecutor

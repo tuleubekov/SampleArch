@@ -3,4 +3,5 @@
 
     <string name="main.navigation.title">Главная</string>
     <string name="common.error.any">Произошла непредвиденная ошибка. Повторите попытку позже.</string>
+    <string name="common.error.noInternet">Отсутствует подключение к сети, проверьте сетевое соединение</string>
 </resources>

@@ -1,6 +1,7 @@
 package com.kay.samplearch.di
 
 import android.content.Context
+import com.kay.samplearch.di.modules.PresentationModule
 
 object AppComponentInjector {
     private lateinit var _appComponent: AppComponent
