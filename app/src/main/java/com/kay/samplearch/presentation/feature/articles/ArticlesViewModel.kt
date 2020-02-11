@@ -2,19 +2,28 @@ package com.kay.samplearch.presentation.feature.articles
 
 import androidx.lifecycle.MutableLiveData
 import com.kay.samplearch.base.BaseViewModel
-import com.kay.samplearch.data.models.ArticleModel
 import com.kay.samplearch.di.Injector
 
 class ArticlesViewModel : BaseViewModel() {
     private val articlesInteractor = Injector.articlesInteractor
+    private val imageLoader = Injector.imageLoader
 
-    val mArticles = MutableLiveData<List<ArticleModel>>()
+    val mArticles = MutableLiveData<List<ArticleDvo>>()
     val mProgress = MutableLiveData<Boolean>()
 
     init {
         mProgress.value = true
         articlesInteractor.observeArticles()
             .scheduleOnApi()
+            .map {
+                it.map { model ->
+                    ArticleDvo(
+                        title = model.title,
+                        link = model.link,
+                        catIcon = imageLoader.load(model.catIcon)
+                    )
+                }
+            }
             .doOnSuccess { mArticles.value = it }
             .doFinally { mProgress.value = false }
             .bindSubscribe()

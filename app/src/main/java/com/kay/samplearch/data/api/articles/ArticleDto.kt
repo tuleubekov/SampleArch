@@ -17,5 +17,5 @@ data class CatCoverDto(
 )
 
 data class SizesDto(
-    @SerializedName("mobile") val mobile: String?
+    @SerializedName("mobile") val mobile: String? = null
 )

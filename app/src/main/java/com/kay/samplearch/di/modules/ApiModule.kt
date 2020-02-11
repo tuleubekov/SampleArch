@@ -1,5 +1,6 @@
 package com.kay.samplearch.di.modules
 
+import android.content.Context
 import com.google.gson.Gson
 import com.kay.samplearch.BuildConfig
 import com.kay.samplearch.data.ApiHelper
@@ -8,12 +9,14 @@ import com.kay.samplearch.data.UrlHelper
 import com.kay.samplearch.data.api.articles.ArticlesApi
 import dagger.Module
 import dagger.Provides
+import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Qualifier
 import javax.inject.Singleton
 
 @Module(includes = [
@@ -24,6 +27,7 @@ class ApiModule {
 
     @Provides
     @Singleton
+    @ApiModuleGeneralHttp
     fun provideSimpleOkHttpClient(): OkHttpClient {
         val bodyInterceptor = HttpLoggingInterceptor()
         bodyInterceptor.level =
@@ -45,7 +49,23 @@ class ApiModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient, gson: Gson, urlHelper: UrlHelper): Retrofit {
+    @ApiModulePictureHttp
+    fun providePictureOkHttp(context: Context, @ApiModuleGeneralHttp okHttpClient: OkHttpClient): OkHttpClient {
+        return okHttpClient.newBuilder()
+            .addNetworkInterceptor { chain ->
+                val originalResponse = chain.proceed(chain.request())
+                originalResponse
+                    .newBuilder()
+                    .header("Cache-Control", "max-age=" + 60 * 60 * 24 * 365)
+                    .build()
+            }
+            .cache(Cache(context.cacheDir, Integer.MAX_VALUE.toLong()))
+            .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRetrofit(@ApiModuleGeneralHttp okHttpClient: OkHttpClient, gson: Gson, urlHelper: UrlHelper): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(urlHelper.getMainUrl())
@@ -65,4 +85,14 @@ class ApiModule {
     companion object {
         const val TIMEOUT = 600L
     }
+
+    @Qualifier
+    @MustBeDocumented
+    @Retention
+    annotation class ApiModuleGeneralHttp
+
+    @Qualifier
+    @MustBeDocumented
+    @Retention
+    annotation class ApiModulePictureHttp
 }
