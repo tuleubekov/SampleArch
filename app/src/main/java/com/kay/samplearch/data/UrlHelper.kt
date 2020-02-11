@@ -12,7 +12,7 @@ abstract class UrlHelper {
     fun getMainUrl() = HttpUrl.Builder()
         .scheme(schema)
         .host(host)
-        .addPathSegment(apiHost)
+        .addPathSegments(apiHost)
         .build()
 }
 
@@ -22,5 +22,5 @@ class TestUrlHelper : UrlHelper() {
 
     override val host: String = "lifehacker.ru"
 
-    override val apiHost: String = "api/wp/v2"
+    override val apiHost: String = "api/wp/v2/"
 }

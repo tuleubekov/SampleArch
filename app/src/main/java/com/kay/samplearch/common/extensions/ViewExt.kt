@@ -13,7 +13,9 @@ import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.TextView
 import androidx.annotation.LayoutRes
+import androidx.recyclerview.widget.RecyclerView
 import com.kay.samplearch.R
+import com.kay.samplearch.presentation.base.BaseAdapter
 
 fun View.visible() = visibility == View.VISIBLE
 
@@ -95,4 +97,12 @@ fun ViewGroup.children(): List<View> {
 fun View.addRipple() = with(TypedValue()) {
     context.theme.resolveAttribute(R.attr.selectableItemBackground, this, true)
     setBackgroundResource(resourceId)
+}
+
+fun <T> RecyclerView.setItems(items: List<T>) {
+    if (adapter !is BaseAdapter<*>) {
+        return
+    }
+
+    (adapter as BaseAdapter<T>).setItems(items)
 }

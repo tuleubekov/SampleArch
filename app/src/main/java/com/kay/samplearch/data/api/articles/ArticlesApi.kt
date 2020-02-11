@@ -5,6 +5,6 @@ import retrofit2.http.GET
 
 interface ArticlesApi {
 
-    @GET("/posts")
-    fun getArticles(): Single<ArticlesDto>
+    @GET("posts")
+    fun getArticles(): Single<List<ArticleDto>>
 }
