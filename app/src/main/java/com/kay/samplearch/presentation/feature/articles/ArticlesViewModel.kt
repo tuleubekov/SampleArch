@@ -1,8 +1,11 @@
 package com.kay.samplearch.presentation.feature.articles
 
 import androidx.lifecycle.MutableLiveData
+import com.kay.samplearch.common.extensions.startNewActivity
 import com.kay.samplearch.presentation.base.BaseViewModel
 import com.kay.samplearch.di.Injector
+import com.kay.samplearch.presentation.feature.webView.WebViewActivity
+import com.kay.samplearch.presentation.feature.webView.WebViewLauncher
 
 class ArticlesViewModel : BaseViewModel() {
     private val articlesInteractor = Injector.articlesInteractor
@@ -27,5 +30,16 @@ class ArticlesViewModel : BaseViewModel() {
             .doOnSuccess { mArticles.value = it }
             .doFinally { mProgress.value = false }
             .bindSubscribe()
+    }
+
+    fun onArticleClicked(dvo: ArticleDvo) {
+        withActivity {
+            it.startNewActivity(WebViewActivity::class, WebViewActivity.args(
+                launcher = WebViewLauncher(
+                    url = dvo.link,
+                    toolbarTitle = dvo.title
+                )
+            ))
+        }
     }
 }

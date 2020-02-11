@@ -61,4 +61,8 @@ class BaseToolbar : AppBarLayout, BaseViewExt {
         vToolbar.setTitleTextColor(titleColor)
         vToolbar.title = title
     }
+
+    fun setTitle(title: String) {
+        vToolbar.title = title
+    }
 }

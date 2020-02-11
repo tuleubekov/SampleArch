@@ -1,7 +1,6 @@
 package com.kay.samplearch.presentation.feature.articles
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kay.samplearch.R
@@ -27,9 +26,10 @@ class ArticlesFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         vRecycler.layoutManager = LinearLayoutManager(context)
-        vRecycler.adapter = ArticlesAdapter(onClick = { Log.e("______", "click title= ${it.title}") })
 
         vm(ArticlesViewModel::class).apply {
+            vRecycler.adapter = ArticlesAdapter { onArticleClicked(it) }
+
             mProgress.observe(viewLifecycleOwner) {
                 vProgress.visible(it)
             }

@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name=".App">
-        <activity android:name=".presentation.feature.articles.ArticlesActivity">
+        <activity
+            android:name=".presentation.feature.articles.ArticlesActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".presentation.feature.webView.WebViewActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
