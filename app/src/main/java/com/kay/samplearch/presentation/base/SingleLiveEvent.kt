@@ -1,4 +1,4 @@
-package com.kay.samplearch.base
+package com.kay.samplearch.presentation.base
 
 import android.util.Log
 import androidx.annotation.MainThread

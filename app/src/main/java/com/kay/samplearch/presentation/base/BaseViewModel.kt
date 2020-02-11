@@ -1,4 +1,4 @@
-package com.kay.samplearch.base
+package com.kay.samplearch.presentation.base
 
 import android.content.Context
 import android.util.Log
@@ -21,8 +21,10 @@ open class BaseViewModel(
     val threadExecutors: ThreadExecutors = Any().Injector.threadExecutors,
     private val uiExceptionHandler: UIExceptionHandler = UIExceptionHandler()
 ) : ViewModel() {
-    protected val compositeDisposable = CompositeDisposableImpl()
-    val activityActionBehavior = SingleLiveEvent<VmAction>()
+    protected val compositeDisposable =
+        CompositeDisposableImpl()
+    val activityActionBehavior =
+        SingleLiveEvent<VmAction>()
 
     fun VmAction.invokeAction() {
         val isUiThread = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {

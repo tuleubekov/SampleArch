@@ -5,8 +5,8 @@ import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kay.samplearch.R
-import com.kay.samplearch.base.BaseFragment
-import com.kay.samplearch.base.BaseViewModel
+import com.kay.samplearch.presentation.base.BaseFragment
+import com.kay.samplearch.presentation.base.BaseViewModel
 import com.kay.samplearch.common.extensions.observe
 import com.kay.samplearch.common.extensions.setItems
 import com.kay.samplearch.common.extensions.visible

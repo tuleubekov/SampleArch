@@ -1,7 +1,7 @@
 package com.kay.samplearch.presentation.feature.articles
 
 import androidx.lifecycle.MutableLiveData
-import com.kay.samplearch.base.BaseViewModel
+import com.kay.samplearch.presentation.base.BaseViewModel
 import com.kay.samplearch.di.Injector
 
 class ArticlesViewModel : BaseViewModel() {

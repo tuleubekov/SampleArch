@@ -1,4 +1,4 @@
-package com.kay.samplearch.base
+package com.kay.samplearch.presentation.base
 
 import io.reactivex.disposables.Disposable
 import java.util.HashMap

@@ -8,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentTransaction
-import com.kay.samplearch.base.AlertDialogFragment
-import com.kay.samplearch.base.BaseActivity
+import com.kay.samplearch.presentation.base.AlertDialogFragment
+import com.kay.samplearch.presentation.base.BaseActivity
 import kotlin.reflect.KClass
 
 fun <T : Activity> Activity.startNewActivity(activityClass: KClass<T>, block: Intent.() -> Unit = {}) {

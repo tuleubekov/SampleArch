@@ -1,4 +1,4 @@
-package com.kay.samplearch.base
+package com.kay.samplearch.presentation.base
 
 import androidx.appcompat.app.AppCompatActivity
 import com.kay.samplearch.R

@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.kay.samplearch.R
-import com.kay.samplearch.base.BaseActivity
-import com.kay.samplearch.base.BaseFragment
+import com.kay.samplearch.presentation.base.BaseActivity
+import com.kay.samplearch.presentation.base.BaseFragment
 import kotlin.reflect.KClass
 
 fun <T: Any> KClass<T>.name(): String {
