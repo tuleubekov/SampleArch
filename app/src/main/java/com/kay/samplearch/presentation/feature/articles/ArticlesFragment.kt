@@ -8,7 +8,6 @@ import com.kay.samplearch.presentation.base.BaseFragment
 import com.kay.samplearch.presentation.base.BaseViewModel
 import com.kay.samplearch.presentation.extensions.observe
 import com.kay.samplearch.presentation.extensions.swapData
-import com.kay.samplearch.presentation.extensions.visible
 import com.kay.samplearch.presentation.base.adapter.CompositeAdapter
 import com.kay.samplearch.presentation.extensions.setLightStatusBar
 import kotlinx.android.synthetic.main.fragment_articles.*
