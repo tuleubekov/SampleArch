@@ -7,8 +7,9 @@ import com.kay.samplearch.R
 import com.kay.samplearch.presentation.base.BaseFragment
 import com.kay.samplearch.presentation.base.BaseViewModel
 import com.kay.samplearch.common.extensions.observe
-import com.kay.samplearch.common.extensions.setItems
+import com.kay.samplearch.common.extensions.swapData
 import com.kay.samplearch.common.extensions.visible
+import com.kay.samplearch.presentation.base.adapter.CompositeAdapter
 import kotlinx.android.synthetic.main.fragment_articles.*
 import kotlin.reflect.KClass
 
@@ -28,14 +29,18 @@ class ArticlesFragment : BaseFragment() {
         vRecycler.layoutManager = LinearLayoutManager(context)
 
         vm(ArticlesViewModel::class).apply {
-            vRecycler.adapter = ArticlesAdapter { onArticleClicked(it) }
+            vRecycler.adapter = CompositeAdapter.Builder()
+                .add(ArticlesAdapter(
+                    onClick = { onArticleClicked(it as ArticleDvo) }
+                ))
+                .build()
 
             mProgress.observe(viewLifecycleOwner) {
                 vProgress.visible(it)
             }
 
             mArticles.observe(viewLifecycleOwner) {
-                vRecycler.setItems(it)
+                vRecycler.swapData(it)
             }
         }
     }

@@ -16,6 +16,7 @@ import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.kay.samplearch.R
 import com.kay.samplearch.presentation.base.BaseAdapter
+import com.kay.samplearch.presentation.base.adapter.base.BaseCompositeDelegateAdapter
 
 fun View.visible() = visibility == View.VISIBLE
 
@@ -105,4 +106,12 @@ fun <T> RecyclerView.setItems(items: List<T>) {
     }
 
     (adapter as BaseAdapter<T>).setItems(items)
+}
+
+fun <T> RecyclerView.swapData(items: List<T>) {
+    if (adapter !is BaseCompositeDelegateAdapter<*>) {
+        return
+    }
+
+    (adapter as BaseCompositeDelegateAdapter<T>).swapData(items)
 }
