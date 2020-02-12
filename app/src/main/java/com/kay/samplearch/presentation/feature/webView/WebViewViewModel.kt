@@ -3,7 +3,7 @@ package com.kay.samplearch.presentation.feature.webView
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.kay.samplearch.common.extensions.def
+import com.kay.samplearch.presentation.extensions.def
 import com.kay.samplearch.presentation.base.BaseViewModel
 
 class WebViewViewModel(launcher: WebViewLauncher) : BaseViewModel() {

@@ -1,4 +1,4 @@
-package com.kay.samplearch.common.extensions
+package com.kay.samplearch.presentation.extensions
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

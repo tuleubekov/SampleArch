@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.kay.samplearch.presentation.base.BaseToolbar
+    <com.kay.samplearch.presentation.customView.BaseToolbar
         android:id="@+id/fragment_web_view_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

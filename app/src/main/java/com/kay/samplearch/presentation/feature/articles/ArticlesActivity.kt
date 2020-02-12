@@ -2,7 +2,7 @@ package com.kay.samplearch.presentation.feature.articles
 
 import android.os.Bundle
 import com.kay.samplearch.presentation.base.BaseActivity
-import com.kay.samplearch.common.extensions.replaceFragment
+import com.kay.samplearch.presentation.extensions.replaceFragment
 
 class ArticlesActivity : BaseActivity() {
 

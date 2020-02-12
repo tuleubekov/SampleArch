@@ -1,4 +1,4 @@
-package com.kay.samplearch.common.extensions
+package com.kay.samplearch.presentation.extensions
 
 import android.content.Context
 import android.content.res.TypedArray

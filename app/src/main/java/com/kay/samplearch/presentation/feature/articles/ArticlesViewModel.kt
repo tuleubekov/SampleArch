@@ -1,7 +1,7 @@
 package com.kay.samplearch.presentation.feature.articles
 
 import androidx.lifecycle.MutableLiveData
-import com.kay.samplearch.common.extensions.startNewActivity
+import com.kay.samplearch.presentation.extensions.startNewActivity
 import com.kay.samplearch.presentation.base.BaseViewModel
 import com.kay.samplearch.di.Injector
 import com.kay.samplearch.presentation.feature.webView.WebViewActivity

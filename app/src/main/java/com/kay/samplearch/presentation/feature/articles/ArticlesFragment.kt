@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.kay.samplearch.R
 import com.kay.samplearch.presentation.base.BaseFragment
 import com.kay.samplearch.presentation.base.BaseViewModel
-import com.kay.samplearch.common.extensions.observe
-import com.kay.samplearch.common.extensions.swapData
-import com.kay.samplearch.common.extensions.visible
+import com.kay.samplearch.presentation.extensions.observe
+import com.kay.samplearch.presentation.extensions.swapData
+import com.kay.samplearch.presentation.extensions.visible
 import com.kay.samplearch.presentation.base.adapter.CompositeAdapter
 import kotlinx.android.synthetic.main.fragment_articles.*
 import kotlin.reflect.KClass

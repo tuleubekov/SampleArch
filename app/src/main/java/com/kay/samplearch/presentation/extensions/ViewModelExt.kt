@@ -1,4 +1,4 @@
-package com.kay.samplearch.common.extensions
+package com.kay.samplearch.presentation.extensions
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData

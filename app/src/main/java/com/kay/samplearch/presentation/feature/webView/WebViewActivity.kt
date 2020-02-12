@@ -2,7 +2,7 @@ package com.kay.samplearch.presentation.feature.webView
 
 import android.content.Intent
 import android.os.Bundle
-import com.kay.samplearch.common.extensions.replaceFragment
+import com.kay.samplearch.presentation.extensions.replaceFragment
 import com.kay.samplearch.presentation.base.BaseActivity
 
 class WebViewActivity : BaseActivity() {

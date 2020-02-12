@@ -1,11 +1,10 @@
 package com.kay.samplearch.presentation.feature.webView
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.kay.samplearch.R
-import com.kay.samplearch.common.extensions.observe
-import com.kay.samplearch.common.extensions.visible
+import com.kay.samplearch.presentation.extensions.observe
+import com.kay.samplearch.presentation.extensions.visible
 import com.kay.samplearch.presentation.base.BaseFragment
 import com.kay.samplearch.presentation.base.BaseViewModel
 import com.kay.samplearch.presentation.base.launcher
@@ -44,11 +43,6 @@ class WebViewFragment : BaseFragment () {
             vWebView.showProgress = {
                 if (isAdded) { showProgress(it) }
             }
-
-            vWebView.eventListener = {
-                Log.e("_____", "eventListener= $it")
-            }
-
         }
 
     }

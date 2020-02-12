@@ -1,7 +1,7 @@
 package com.kay.samplearch.presentation.base
 
 import androidx.appcompat.app.AppCompatActivity
-import com.kay.samplearch.common.extensions.cast
+import com.kay.samplearch.presentation.extensions.cast
 
 open class VmAction(var singleAction: (BaseActivity) -> Unit) {
 

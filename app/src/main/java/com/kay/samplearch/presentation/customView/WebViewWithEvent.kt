@@ -11,7 +11,6 @@ class WebViewWithEvent @JvmOverloads constructor(context: Context, attrs: Attrib
     : WebView(context, attrs, defStyleAttr) {
 
     var showProgress: ((Boolean) -> Unit) = {}
-    var eventListener: ((String) -> Unit) = {}
 
     init {
         settings.javaScriptEnabled = true
@@ -46,16 +45,5 @@ class WebViewWithEvent @JvmOverloads constructor(context: Context, attrs: Attrib
                 return super.onConsoleMessage(consoleMessage)
             }
         }
-
-        this.addJavascriptInterface(WebAppInterface(), "Android")
-
     }
-
-    inner class WebAppInterface {
-        @JavascriptInterface
-        fun sendMessage(message: String) {
-            eventListener(message)
-        }
-    }
-
 }

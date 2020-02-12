@@ -2,7 +2,7 @@ package com.kay.samplearch.presentation.base
 
 import androidx.appcompat.app.AppCompatActivity
 import com.kay.samplearch.R
-import com.kay.samplearch.common.extensions.showAlert
+import com.kay.samplearch.presentation.extensions.showAlert
 import com.kay.samplearch.domain.exceptions.ApiException
 
 class UIExceptionHandler {

@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModel
 import com.kay.samplearch.BuildConfig
 import com.kay.samplearch.common.ThreadExecutors
-import com.kay.samplearch.common.extensions.cast
+import com.kay.samplearch.presentation.extensions.cast
 import com.kay.samplearch.di.Injector
 import com.kay.samplearch.domain.exceptions.ApiException
 import io.reactivex.Completable

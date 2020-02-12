@@ -5,7 +5,7 @@ import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.kay.samplearch.R
-import com.kay.samplearch.common.extensions.getColorCompat
+import com.kay.samplearch.presentation.extensions.getColorCompat
 import kotlin.reflect.KClass
 
 class AlertDialogFragment : BaseDialogFragment() {

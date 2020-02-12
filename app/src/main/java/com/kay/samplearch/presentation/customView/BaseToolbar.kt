@@ -1,13 +1,14 @@
-package com.kay.samplearch.presentation.base
+package com.kay.samplearch.presentation.customView
 
 import android.content.Context
 import android.util.AttributeSet
 import com.google.android.material.appbar.AppBarLayout
 import com.kay.samplearch.R
-import com.kay.samplearch.common.extensions.getColorCompat
-import com.kay.samplearch.common.extensions.inflate
-import com.kay.samplearch.common.extensions.obtainStyledAttributes
+import com.kay.samplearch.presentation.extensions.getColorCompat
+import com.kay.samplearch.presentation.extensions.inflate
+import com.kay.samplearch.presentation.extensions.obtainStyledAttributes
 import com.kay.samplearch.common.extensions.toPx
+import com.kay.samplearch.presentation.base.BaseViewExt
 import kotlinx.android.synthetic.main.view_base_toolbar.view.*
 
 class BaseToolbar : AppBarLayout, BaseViewExt {
