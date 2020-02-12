@@ -1,13 +1,20 @@
 package com.kay.samplearch.presentation.extensions
 
 import android.app.Activity
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.view.Window
+import android.view.WindowManager
+import androidx.annotation.ColorRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentTransaction
+import com.kay.samplearch.R
 import com.kay.samplearch.presentation.base.AlertDialogFragment
 import com.kay.samplearch.presentation.base.BaseActivity
 import kotlin.reflect.KClass
@@ -68,6 +75,21 @@ fun AppCompatActivity.removeFragment(fragment: Fragment) {
     supportFragmentManager.beginTransaction()
         .remove(fragment)
         .commitAllowingStateLoss()
+}
+
+fun Window.setNewStatusBarColor(context: Context, @ColorRes color: Int) {
+    clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        statusBarColor = context.getColorCompat(color)
+    }
+}
+
+fun Window.setLightStatusBar() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        setNewStatusBarColor(context!!, R.color.ui_color_toolbar_background)
+    }
 }
 
 fun AppCompatActivity.base() = this.cast(BaseActivity::class)

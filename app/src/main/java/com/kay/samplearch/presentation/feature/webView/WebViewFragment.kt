@@ -8,6 +8,7 @@ import com.kay.samplearch.presentation.extensions.visible
 import com.kay.samplearch.presentation.base.BaseFragment
 import com.kay.samplearch.presentation.base.BaseViewModel
 import com.kay.samplearch.presentation.base.launcher
+import com.kay.samplearch.presentation.extensions.setLightStatusBar
 import kotlinx.android.synthetic.main.fragment_web_view.*
 import kotlin.reflect.KClass
 
@@ -25,6 +26,7 @@ class WebViewFragment : BaseFragment () {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.window?.setLightStatusBar()
         vWebView.requestFocus(View.FOCUS_DOWN)
 
         vm(WebViewViewModel::class).apply {

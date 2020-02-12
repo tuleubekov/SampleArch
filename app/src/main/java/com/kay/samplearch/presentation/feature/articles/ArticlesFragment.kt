@@ -10,6 +10,7 @@ import com.kay.samplearch.presentation.extensions.observe
 import com.kay.samplearch.presentation.extensions.swapData
 import com.kay.samplearch.presentation.extensions.visible
 import com.kay.samplearch.presentation.base.adapter.CompositeAdapter
+import com.kay.samplearch.presentation.extensions.setLightStatusBar
 import kotlinx.android.synthetic.main.fragment_articles.*
 import kotlin.reflect.KClass
 
@@ -26,6 +27,7 @@ class ArticlesFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        activity?.window?.setLightStatusBar()
         vRecycler.layoutManager = LinearLayoutManager(context)
 
         vm(ArticlesViewModel::class).apply {
