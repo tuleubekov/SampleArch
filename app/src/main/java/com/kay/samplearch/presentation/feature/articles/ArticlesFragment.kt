@@ -18,7 +18,7 @@ class ArticlesFragment : BaseFragment() {
 
     override val layoutId get() = R.layout.fragment_articles
 
-    private val vProgress get() = fragment_articles_progress
+    private val vRefresh get() = fragment_articles_refresh
     private val vRecycler get() = fragment_articles_list
 
     override fun provideViewModel(): Map<KClass<*>, () -> BaseViewModel> {
@@ -37,8 +37,12 @@ class ArticlesFragment : BaseFragment() {
                 ))
                 .build()
 
+            vRefresh.setOnRefreshListener {
+                observeArticles()
+            }
+
             mProgress.observe(viewLifecycleOwner) {
-                vProgress.visible(it)
+                vRefresh.isRefreshing = it
             }
 
             mArticles.observe(viewLifecycleOwner) {

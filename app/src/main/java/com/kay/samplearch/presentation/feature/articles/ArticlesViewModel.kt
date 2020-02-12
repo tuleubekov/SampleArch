@@ -15,6 +15,10 @@ class ArticlesViewModel : BaseViewModel() {
     val mProgress = MutableLiveData<Boolean>()
 
     init {
+        observeArticles()
+    }
+
+    fun observeArticles() {
         mProgress.value = true
         articlesInteractor.observeArticles()
             .scheduleOnApi()
@@ -29,7 +33,7 @@ class ArticlesViewModel : BaseViewModel() {
             }
             .doOnSuccess { mArticles.value = it }
             .doFinally { mProgress.value = false }
-            .bindSubscribe()
+            .bindSubscribe(bindName = "observeArticles")
     }
 
     fun onArticleClicked(dvo: ArticleDvo) {
