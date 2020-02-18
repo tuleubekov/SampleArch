@@ -38,8 +38,8 @@ class WebViewFragment : BaseFragment () {
                 vToolbar.setTitle(it)
             }
 
-            mWebViewUrl.observe(viewLifecycleOwner) {
-                vWebView.loadUrl(it)
+            mWebViewContent.observe(viewLifecycleOwner) {
+                vWebView.setContent(it)
             }
 
             vWebView.showProgress = {

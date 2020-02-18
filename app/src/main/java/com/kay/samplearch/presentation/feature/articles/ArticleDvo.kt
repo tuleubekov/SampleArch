@@ -8,5 +8,6 @@ import kotlinx.android.parcel.Parcelize
 data class ArticleDvo(
     val title: String,
     val link: String,
+    val content: String,
     val catIcon: ImageLoader.RequestBuilder
 ): IAdapterItem

@@ -27,6 +27,7 @@ class ArticlesViewModel : BaseViewModel() {
                     ArticleDvo(
                         title = model.title,
                         link = model.link,
+                        content = model.content,
                         catIcon = imageLoader.load(model.catIcon)
                     )
                 }
@@ -41,7 +42,8 @@ class ArticlesViewModel : BaseViewModel() {
             it.startNewActivity(WebViewActivity::class, WebViewActivity.args(
                 launcher = WebViewLauncher(
                     url = dvo.link,
-                    toolbarTitle = dvo.title
+                    toolbarTitle = dvo.title,
+                    content = dvo.content
                 )
             ))
         }

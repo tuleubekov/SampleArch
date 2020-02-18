@@ -10,6 +10,7 @@ class SupportInfoMapper {
             ArticleModel(
                 link = it.link,
                 title = it.titleDto.rendered,
+                content = it.contentDto.rendered,
                 catIcon = it.catCoverDto?.sizesDto?.mobile ?: ""
             )
         }

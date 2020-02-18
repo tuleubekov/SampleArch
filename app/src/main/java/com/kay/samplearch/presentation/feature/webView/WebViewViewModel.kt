@@ -10,6 +10,7 @@ class WebViewViewModel(launcher: WebViewLauncher) : BaseViewModel() {
     val mProgress = MutableLiveData<Boolean>().def(false)
     val mWebViewUrl = MutableLiveData<String>().def(launcher.url)
     val mToolbarTitle = MutableLiveData<String>().def(launcher.toolbarTitle)
+    val mWebViewContent = MutableLiveData<String>().def(launcher.content)
 
     fun showProgress(showProgress: Boolean) {
         mProgress.value = showProgress
